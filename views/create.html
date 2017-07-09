@@ -1,0 +1,54 @@
+<div class="row">
+    <h2 align="center">New Reservation</h2>
+</div>
+<div class="row">
+    <form class="form-horizontal" ng-submit="addReservation(responsable,local,room,startDate,finishDate,personsNumber,description)">
+        <div class="form-group">
+            <input type="text" ng-model="responsable" class="form-control" placeholder="Responsable" required="required">
+        </div>
+        <div class="form-group">
+            <label for="sel1">Select Local:</label>
+            <select class="form-control" ng-model="local" required>
+                <option value="">-- Local --</option>
+                <option value="Floripa Shopping">Floripa Shopping</option>
+                <option value="Continente Park">Continente Park</option>
+                <option value="Shopping Iguatemi">Shopping Iguatemi</option>
+                <option value="Shopping Beira Mar">Shopping Beira Mar</option>
+            </select>
+            <!-- <input type="text" ng-model="local" class="form-control" placeholder="Local" required="required"> !-->
+        </div>
+        <div class="form-group">
+            <label for="sel1">Select Room:</label>
+            <select class="form-control" name="roomChoice" ng-model="room" required>
+                <option value="">-- Room --</option>
+                <option value="Room 1">Room 1</option>
+                <option value="Room 2">Room 2</option>
+                <option value="Room 3">Room 3</option>
+                <option value="Room 4">Room 4</option>
+            </select>
+            <!-- <input type="text" ng-model="room" class="form-control" placeholder="Room" required="required"> !-->
+        </div>
+        <div class="form-group">
+            <span class="input-group-addon" id="basic-addon1">* Start Date</span>
+            <input type="Date" ng-model="startDate" id="startDate" class="form-control" placeholder="Start Date" required="required">
+        </div>
+        <div class="form-group">
+            <span class="input-group-addon" id="basic-addon1">Finish Date</span>
+            <input type="Date" ng-model="finishDate" id="finishDate" class="form-control" placeholder="Finish Date" required="required">
+        </div>
+        <div class="form-group">
+            <input type="number" ng-model="personsNumber" class="form-control" placeholder="Persons Number" min="0">
+        </div>
+        <div class="form-group">
+            <input type="text" ng-model="description" class="form-control" placeholder="Description">
+        </div>
+        <div class="form-group">
+            <p>(*) Reservation should be done before 24H</p>
+        </div>
+        <br>
+        <div align="center" class="form-group">
+            <button class="btn btn-success">Confirm</button>
+            <a href="#/" class="btn btn-danger">Cancel</a>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,52 @@
+<div class="col-md-12">
+    <div class="row">
+        <h2 class="text-center"><u>Reservation</u></h2>
+    </div>
+    <br/>
+    <div class="row">
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <td> </td>
+                    <td>Nº</td>
+                    <td>Responsable</td>
+                    <td>Local</td>
+                    <td>Room</td>
+                    <td>Start Date</td>
+                    <td>Finish Date</td>
+                    <td>Persons Number</td>
+                    <td>Description</td>
+                    <td>Edit</td>
+                    <td>Delete</td>
+                </tr>
+            </thead>
+            <tbody id="reservationsTable">
+                <tr ng-repeat="item in reservations">
+                    <td>
+                        <input type="checkbox" name="checkElement" id="checkElement" value="{{item.id}}" />
+                    </td>
+                    <td>{{item.id}}</td>
+                    <td>{{item.responsable}}</td>
+                    <td>{{item.local}}</td>
+                    <td>{{item.room}}</td>
+                    <td>{{item.startDate |date : 'MMM-dd-yyyy'}}</td>
+                    <td>{{item.finishDate |date : 'MMM-dd-yyyy'}}</td>
+                    <td>{{item.personsNumber}}</td>
+                    <td>{{item.description}}</td>
+                    <td><a href="#/edit/{{item.id}}" class="btn btn-warning">Edit</a></td>
+                    <td>
+                        <button ng-click="delete(item.id)" class="btn btn-danger btn-block">Delete</button>
+                    </td>
+                </tr>
+                <tr ng-show="notFound" class="text-center">
+                    <td colspan="11">There is no Reservations</td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+        <div align="center" class="form-group">
+            <a href="#/create" class="btn btn-primary">New Reservation</a>
+            <button ng-click="deleteMultiple()" class="btn btn-danger">Delete Selected</button>
+        </div>
+    </div>
+</div>
